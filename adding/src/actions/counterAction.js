@@ -1,8 +1,11 @@
-import {ADD } from './Types';
+export const addA = () => {
+  return {
+    type: 'ADD_A'
+  }
+}
 
-
-export const handleClick = e => {
-  dispatchEvent({
-    type: ADD
-  })
+export const addB = () => {
+  return {
+    type: 'ADD_B'
+  }
 }
