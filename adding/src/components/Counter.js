@@ -1,32 +1,17 @@
-// import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { addA, addB } from '../actions/counterAction'
-
-// const handleClick = (props) => {
-//   props.handleClick()
-// }
 import React from 'react'
 
-function Counter(props) {
-  console.log("inside counter props:" + props)
+const Counter = (props) => {
+  console.log("inside counter props:" + props.countA)
   return (
-    <div>
-    <div className="counterA">A: {props.countA}</div>
-    <button className="btnA" onClick={props.addA}>ADD</button>
-    <div className="counterB">B: {props.countB}</div>
-  </div>
+    <div >
+      <div className="counterA" >A: {props.countA}</div>
+      <button className="btnA" onClick={() => props.addA(props.countB)}>ADD</button>
+      <div className="counterB">B: {props.countB}</div>
+      <button className="btnB" onClick={() => props.addB(props.countA)}>ADD B</button>
+    </div>
   )
 }
 
 
-const mapStateToProps = state => ({
-  countA: state.countA,
-  countB: state.countB,
-})
+export default Counter
 
-const mapDispatchToProps = (dispatch) => ({
-  addA: () => dispatch(addA()),
-  addB: () => dispatch(addB()),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)

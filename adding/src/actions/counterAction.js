@@ -1,11 +1,16 @@
-export const addA = () => {
+export const addA = (countB) => {
   return {
-    type: 'ADD_A'
+    type: 'ADD_A',
+    payload: countB
   }
 }
 
-export const addB = () => {
+export const addB = (countA) => {
+
   return {
-    type: 'ADD_B'
+    type: 'ADD_B',
+    payload: countA
   }
 }
+
+// export const add
